@@ -22,8 +22,14 @@ class RecentsTableViewController: UITableViewController {
         super.viewDidAppear(animated)
         
         if User.currentUser() == nil {
-        
+            showLogin()
         }
+    }
+    
+    private func showLogin() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let welcomeViewController = storyboard.instantiateViewControllerWithIdentifier("WelcomeNavigationViewController") as! UINavigationController
+        self.presentViewController(welcomeViewController, animated: true, completion: nil)
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
