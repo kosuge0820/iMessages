@@ -23,7 +23,7 @@ class JoinTeamViewController: UIViewController {
         if teamIdTextField.text!.isEmpty {
             shake()
         } else {
-            let query = PFQuery()
+            let query = PFQuery(className: )
         }
     }
     private func shake(){
