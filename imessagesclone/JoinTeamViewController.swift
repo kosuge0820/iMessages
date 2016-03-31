@@ -23,10 +23,25 @@ class JoinTeamViewController: UIViewController {
         if teamIdTextField.text!.isEmpty {
             shake()
         } else {
-            let query = PFQuery(className: )
+            let query = PFQuery(className: Team.parseClassName())
+            query.whereKey("title", equalTo: teamIdTextField.text!)
+            query.cachePolicy = .NetworkOnly
+            query.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+                if error == nil {
+                    if let objects = objects as [PFObject]! {
+                        if objects.count > 0 {
+                            if let team = objects.first as? Team{
+                                team.addNewMemberWithId((User.currentUser()?.objectId)!)
+                            }
+                        } else {
+                            self.shake()
+                        }
+                    }
+                }
+            })
         }
     }
-    private func shake(){
+     private func shake(){
         containerView.animation = "shake"
         containerView.curve = "spring"
         containerView.duration = 1.0
