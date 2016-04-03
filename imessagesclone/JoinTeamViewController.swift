@@ -32,11 +32,18 @@ class JoinTeamViewController: UIViewController {
                         if objects.count > 0 {
                             if let team = objects.first as? Team{
                                 team.addNewMemberWithId((User.currentUser()?.objectId)!)
+                                User.currentUser()!.currentTeamId = team.objectId!
+                                User.currentUser()?.saveInBackground()
+                                
+                                self.dismissViewControllerAnimated(true, completion: nil)
                             }
                         } else {
+                            //チームがない状態
                             self.shake()
                         }
                     }
+                } else {
+                    print("\(error?.localizedDescription)")
                 }
             })
         }
