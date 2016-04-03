@@ -402,8 +402,7 @@
 			children = (
 				DB60B6DF1BCC644300798EE6 /* AppDelegate.swift */,
 				DB60B6E31BCC644300798EE6 /* Main.storyboard */,
-				FC30E5721CAB81640042BE02 /* JoinTeamViewController.swift */,
-				FC30E5741CAB81740042BE02 /* CreateNewTeamViewController.swift */,
+				FC4837561CB0EA6700D978D7 /* Join and Create ViewController */,
 				FC30E5701CAB53700042BE02 /* Recents */,
 				FC30E5711CAB53830042BE02 /* Contacts */,
 				DB60B83A1BCC733900798EE6 /* Messages */,
@@ -755,6 +754,15 @@
 				FC30E56E1CAB52FC0042BE02 /* ContactsTableViewController.swift */,
 			);
 			name = Contacts;
+			sourceTree = "<group>";
+		};
+		FC4837561CB0EA6700D978D7 /* Join and Create ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FC30E5721CAB81640042BE02 /* JoinTeamViewController.swift */,
+				FC30E5741CAB81740042BE02 /* CreateNewTeamViewController.swift */,
+			);
+			name = "Join and Create ViewController";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

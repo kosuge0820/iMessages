@@ -843,10 +843,20 @@
                                 <state key="normal" title="Back">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="backButton_Clicked:" destination="nW9-bv-KH6" eventType="touchUpInside" id="nf5-do-Llh"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nRm-zf-6hH" customClass="DesignableView" customModule="iMessagesClone" customModuleProvider="target">
                                 <rect key="frame" x="20" y="200" width="560" height="62"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dOa-Po-8Sd">
+                                        <rect key="frame" x="0.0" y="38" width="560" height="1"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="0.5" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="M4M-n3-CyH"/>
+                                        </constraints>
+                                    </view>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your new team id" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dry-Dm-rxE">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
                                         <constraints>
@@ -855,13 +865,6 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dOa-Po-8Sd">
-                                        <rect key="frame" x="0.0" y="38" width="560" height="1"/>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="0.5" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="M4M-n3-CyH"/>
-                                        </constraints>
-                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="62" id="5By-3V-btj"/>
@@ -887,6 +890,9 @@
                                 <state key="normal" title="Create">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="createButton_Clicked:" destination="nW9-bv-KH6" eventType="touchUpInside" id="WVP-ut-2Mf"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create New Team" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ref-lZ-uAH">
                                 <rect key="frame" x="232" y="34" width="136" height="21"/>
@@ -918,11 +924,17 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="containerView" destination="nRm-zf-6hH" id="ezg-Ii-d7M"/>
+                        <outlet property="containerView" destination="nRm-zf-6hH" id="58S-As-lqI"/>
+                        <outlet property="newTeamTextField" destination="Dry-Dm-rxE" id="KQV-ml-d8Z"/>
+                        <outlet property="teamFeaturedImage" destination="fLE-UD-Qnv" id="pmM-Ip-CKd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iwg-Yg-d67" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="55K-Py-G1Y"/>
+                <tapGestureRecognizer id="55K-Py-G1Y">
+                    <connections>
+                        <action selector="pickFeaturedImage_Clicked:" destination="nW9-bv-KH6" id="9kp-Vd-xMK"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3396" y="1270"/>
         </scene>
