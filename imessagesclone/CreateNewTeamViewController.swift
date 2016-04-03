@@ -8,6 +8,7 @@
 
 import UIKit
 import Photos
+import Parse
 
 class CreateNewTeamViewController: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate {
     @IBOutlet weak var teamFeaturedImage: UIImageView!
@@ -67,7 +68,46 @@ class CreateNewTeamViewController: UIViewController , UIImagePickerControllerDel
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
-    @IBAction func createButton_Clicked(sender: UIButton) {
-        
+    private func shake() {
+        containerView.animation = "shack"
+        containerView.duration = 1.0
+        containerView.curve = "spring"
+        containerView.animate()
     }
+    
+    @IBAction func createButton_Clicked(sender: UIButton) {
+        if newTeamTextField.text!.isEmpty {
+            shake()
+        } else {
+            let query = PFQuery(className: Team.parseClassName())
+            query.whereKey("title", equalTo: newTeamTextField.text!)
+            query.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+                if error == nil {
+                    if let ids = objects as [PFObject]! {
+                        if ids.count > 0 {
+                            self.shake()
+                            return
+                        } else {
+                            //その名前でチームを作る
+                            let newTeam = Team(title: self.newTeamTextField.text!, featuredImage: self.featuredImage, newMemberId: (User.currentUser()?.objectId!)!)
+                            newTeam.saveInBackgroundWithBlock({ (success, error) -> Void in
+                                if error == nil {
+                                    User.currentUser()!.currentTeamId = newTeam.objectId!
+                                    User.currentUser()?.saveInBackground()
+                                    self.dismissViewControllerAnimated(true, completion: nil)
+                                } else {
+                                    print("\(error?.localizedDescription)")
+                                }
+                            })
+                        }
+                    }
+                } else {
+                    //there is an error
+                    print("\(error?.localizedDescription)")
+                }
+            })
+        }
+    }
+    
+    
 }
