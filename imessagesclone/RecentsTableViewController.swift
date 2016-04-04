@@ -9,9 +9,14 @@
 import UIKit
 
 class RecentsTableViewController: UITableViewController {
+    
+    @IBOutlet weak var logoutButton: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.leftBarButtonItem = self.logoutButton
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,5 +52,17 @@ class RecentsTableViewController: UITableViewController {
         // Configure the cell...
 
         return cell
+    }
+    
+    @IBAction func logoutButton_Clicked(sender: UIBarButtonItem) {
+        User.currentUser()?.currentTeamId = ""
+        User.currentUser()?.saveInBackgroundWithBlock({ (success, error) -> Void in
+            if success {
+                User.logOut()
+                self.showLogin()
+            } else {
+                print("\(error?.localizedDescription)")
+            }
+        })
     }
  }

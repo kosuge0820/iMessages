@@ -133,6 +133,7 @@
 		FC30E56F1CAB52FC0042BE02 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC30E56E1CAB52FC0042BE02 /* ContactsTableViewController.swift */; };
 		FC30E5731CAB81640042BE02 /* JoinTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC30E5721CAB81640042BE02 /* JoinTeamViewController.swift */; };
 		FC30E5751CAB81740042BE02 /* CreateNewTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC30E5741CAB81740042BE02 /* CreateNewTeamViewController.swift */; };
+		FC7C5C301CB27B880055531E /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7C5C2F1CB27B880055531E /* ContactsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -333,6 +334,7 @@
 		FC30E56E1CAB52FC0042BE02 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactsTableViewController.swift; path = imessagesclone/ContactsTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		FC30E5721CAB81640042BE02 /* JoinTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JoinTeamViewController.swift; path = imessagesclone/JoinTeamViewController.swift; sourceTree = SOURCE_ROOT; };
 		FC30E5741CAB81740042BE02 /* CreateNewTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateNewTeamViewController.swift; path = imessagesclone/CreateNewTeamViewController.swift; sourceTree = SOURCE_ROOT; };
+		FC7C5C2F1CB27B880055531E /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactsTableViewCell.swift; path = imessagesclone/ContactsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -752,6 +754,7 @@
 			isa = PBXGroup;
 			children = (
 				FC30E56E1CAB52FC0042BE02 /* ContactsTableViewController.swift */,
+				FC7C5C2F1CB27B880055531E /* ContactsTableViewCell.swift */,
 			);
 			name = Contacts;
 			sourceTree = "<group>";
@@ -934,6 +937,7 @@
 				DB60B7C71BCC655D00798EE6 /* BlurView.swift in Sources */,
 				DB60B7D41BCC655D00798EE6 /* Misc.swift in Sources */,
 				DB60B7D21BCC655D00798EE6 /* LoadingView.swift in Sources */,
+				FC7C5C301CB27B880055531E /* ContactsTableViewCell.swift in Sources */,
 				DB60B7C01BCC655D00798EE6 /* JSQMessagesToolbarContentView.m in Sources */,
 				DB60B7C61BCC655D00798EE6 /* AutoTextView.swift in Sources */,
 				DB60B7DE1BCC655D00798EE6 /* TransitionManager.swift in Sources */,

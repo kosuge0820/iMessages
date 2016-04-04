@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+
 class JoinTeamViewController: UIViewController {
 
     @IBOutlet weak var containerView: DesignableView!
