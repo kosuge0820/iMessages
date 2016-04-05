@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  iMessagesClone
 //
-//  Created by kosuge_satoshi.
-//  Copyright © 2015 kosuge_satoshi. All rights reserved.
+//  Created by 小菅　仁士.
+//  Copyright © 2015 satoshi. All rights reserved.
 //
 
 import UIKit
