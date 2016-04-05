@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Contacts Cell" rowHeight="57" id="bFR-5c-XgR">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Contacts Cell" rowHeight="57" id="bFR-5c-XgR" customClass="ContactsTableViewCell" customModule="iMessagesClone" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="57"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bFR-5c-XgR" id="OG9-Ah-Edn">
@@ -24,7 +24,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dk3-w3-bhA">
                                             <rect key="frame" x="56" y="17" width="485" height="21"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xzt-Fe-wFd">
@@ -56,6 +56,11 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Xzt-Fe-wFd" secondAttribute="trailing" constant="41" id="0O8-kx-MRZ"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="onlineIndicator" destination="Xzt-Fe-wFd" id="S2n-rO-pfq"/>
+                                    <outlet property="userNameLabel" destination="dk3-w3-bhA" id="vP3-Vr-ZJt"/>
+                                    <outlet property="userProfileImage" destination="QK9-gf-p4B" id="rkj-0l-PqI"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

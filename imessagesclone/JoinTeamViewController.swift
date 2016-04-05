@@ -3,7 +3,7 @@
 //  iMessagesClone
 //
 //  Created by 小菅仁士 on 2016/03/30.
-//  Copyright © 2016年 Ryo. All rights reserved.
+//  Copyright © 2016年 satoshi. All rights reserved.
 //
 
 import UIKit

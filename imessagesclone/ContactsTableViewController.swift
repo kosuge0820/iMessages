@@ -3,7 +3,7 @@
 //  iMessagesClone
 //
 //  Created by 小菅仁士 on 2016/03/30.
-//  Copyright © 2016年 Ryo. All rights reserved.
+//  Copyright © 2016年 satoshi. All rights reserved.
 //
 
 import UIKit
@@ -32,6 +32,36 @@ class ContactsTableViewController: UITableViewController {
     }
     
     private func fetchUsers() {
+        let teamQuery = PFQuery(className: Team.parseClassName())
+        teamQuery.cachePolicy = .NetworkElseCache
+        
+        teamQuery.getObjectInBackgroundWithId(teamId) { (objects, error) -> Void in
+            if error == nil {
+                if let team = objects as? Team {
+                    if let memberIds = team.memberIds {
+                        let query = User.query()!
+                        
+                        query.whereKey("objectId", containedIn: memberIds)
+                        query.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+                            if error == nil {
+                                if let objects = objects as [PFObject]! {
+                                    self.users.removeAll()
+                                    
+                                    for objects in objects {
+                                        let user = objects as! User
+                                        self.users.append(user)
+                                    }
+                                    self.tableView.reloadData()
+                                }
+                                
+                            }
+                        })
+                    }
+                }
+            } else {
+                print("\(error?.localizedDescription)")
+            }
+        }
         
     }
     
@@ -53,6 +83,9 @@ struct StoryBoard {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(StoryBoard.cellIdentifier, forIndexPath: indexPath) as! ContactsTableViewCell
+        cell.user = users[indexPath.row]
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        
         return cell
     }
 }

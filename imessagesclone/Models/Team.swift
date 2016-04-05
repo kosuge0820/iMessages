@@ -9,10 +9,10 @@
 import UIKit
 import Parse
 
-public class Team:PFObject, PFSubclassing {
+public class Team: PFObject, PFSubclassing {
     
     @NSManaged public var title: String!
-    @NSManaged public var numberOfMember: Int
+    @NSManaged public var numberOfMembers: Int
     @NSManaged public var featheredImageFile: PFFile!
     @NSManaged public var memberIds: [String]!
     
@@ -23,10 +23,14 @@ public class Team:PFObject, PFSubclassing {
         self.memberIds = [newMemberId]
     }
     
+    override init() {
+        super.init()
+    }
+    
     public func addNewMemberWithId(newMemberId: String){
         if !memberIds.contains(newMemberId){
             memberIds.insert(newMemberId, atIndex: 0)
-            numberOfMember++
+            numberOfMembers++
             self.saveInBackground()
         }
     }
@@ -34,7 +38,7 @@ public class Team:PFObject, PFSubclassing {
     public func takeOutMemberWithId(memberId: String){
         if let index = memberIds.indexOf(memberId){
             memberIds.removeAtIndex(index)
-            numberOfMember--
+            numberOfMembers--
             self.saveInBackground()
         }
     
