@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         User.initialize()
         Team.initialize()
+        Conversation.initialize()
         
         // Initialize Parse.
         Parse.setApplicationId("xFJSxhV25g9T6dwh14RK32hYTycv6orbW8bOVDdS", clientKey: "egy5nsbsYotdI1OJZcFVAt8rNTqnPtx2GI48dObS")

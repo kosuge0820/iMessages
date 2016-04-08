@@ -88,4 +88,8 @@ struct StoryBoard {
         
         return cell
     }
+    
+    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        
+    }
 }

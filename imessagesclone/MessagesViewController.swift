@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import Parse
+import Photos
 
 class MessagesViewController: JSQMessagesViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+//    var conversation: Conversation!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
