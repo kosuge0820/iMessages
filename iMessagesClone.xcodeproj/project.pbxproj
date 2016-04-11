@@ -128,12 +128,13 @@
 		DB60B82E1BCC680900798EE6 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB60B82A1BCC680900798EE6 /* Team.swift */; };
 		DB60B82F1BCC680900798EE6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB60B82B1BCC680900798EE6 /* User.swift */; };
 		DB60B8381BCC708200798EE6 /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = DB60B8361BCC708200798EE6 /* NSDate+Utilities.m */; };
-		DBEEBAC11BCC87E6001D48FE /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEEBAC01BCC87E6001D48FE /* MessagesViewController.swift */; };
 		FC30E56D1CAB52F00042BE02 /* RecentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC30E56C1CAB52F00042BE02 /* RecentsTableViewController.swift */; };
 		FC30E56F1CAB52FC0042BE02 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC30E56E1CAB52FC0042BE02 /* ContactsTableViewController.swift */; };
 		FC30E5731CAB81640042BE02 /* JoinTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC30E5721CAB81640042BE02 /* JoinTeamViewController.swift */; };
 		FC30E5751CAB81740042BE02 /* CreateNewTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC30E5741CAB81740042BE02 /* CreateNewTeamViewController.swift */; };
 		FC7C5C301CB27B880055531E /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7C5C2F1CB27B880055531E /* ContactsTableViewCell.swift */; };
+		FCB000A01CBA795400DC9AC0 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0009F1CBA795400DC9AC0 /* PhotoViewController.swift */; };
+		FCC6E73E1CBB52A400191EE0 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC6E73D1CBB52A400191EE0 /* MessagesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -329,12 +330,13 @@
 		DB60B8351BCC702400798EE6 /* Messages-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Messages-Bridging-Header.h"; sourceTree = "<group>"; };
 		DB60B8361BCC708200798EE6 /* NSDate+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utilities.m"; sourceTree = "<group>"; };
 		DB60B8371BCC708200798EE6 /* NSDate+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utilities.h"; sourceTree = "<group>"; };
-		DBEEBAC01BCC87E6001D48FE /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		FC30E56C1CAB52F00042BE02 /* RecentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecentsTableViewController.swift; path = imessagesclone/RecentsTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		FC30E56E1CAB52FC0042BE02 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactsTableViewController.swift; path = imessagesclone/ContactsTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		FC30E5721CAB81640042BE02 /* JoinTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JoinTeamViewController.swift; path = imessagesclone/JoinTeamViewController.swift; sourceTree = SOURCE_ROOT; };
 		FC30E5741CAB81740042BE02 /* CreateNewTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateNewTeamViewController.swift; path = imessagesclone/CreateNewTeamViewController.swift; sourceTree = SOURCE_ROOT; };
 		FC7C5C2F1CB27B880055531E /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactsTableViewCell.swift; path = imessagesclone/ContactsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		FCB0009F1CBA795400DC9AC0 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoViewController.swift; path = imessagesclone/PhotoViewController.swift; sourceTree = SOURCE_ROOT; };
+		FCC6E73D1CBB52A400191EE0 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessagesViewController.swift; path = imessagesclone/MessagesViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -736,7 +738,8 @@
 		DB60B83A1BCC733900798EE6 /* Messages */ = {
 			isa = PBXGroup;
 			children = (
-				DBEEBAC01BCC87E6001D48FE /* MessagesViewController.swift */,
+				FCB0009F1CBA795400DC9AC0 /* PhotoViewController.swift */,
+				FCC6E73D1CBB52A400191EE0 /* MessagesViewController.swift */,
 				DB60B8351BCC702400798EE6 /* Messages-Bridging-Header.h */,
 			);
 			name = Messages;
@@ -970,6 +973,7 @@
 				DB60B80E1BCC66A700798EE6 /* SignupEmailViewController.swift in Sources */,
 				DB60B7B21BCC655D00798EE6 /* JSQVideoMediaItem.m in Sources */,
 				DB60B7DF1BCC655D00798EE6 /* TransitionZoom.swift in Sources */,
+				FCC6E73E1CBB52A400191EE0 /* MessagesViewController.swift in Sources */,
 				DB60B6E01BCC644300798EE6 /* AppDelegate.swift in Sources */,
 				DB60B7D51BCC655D00798EE6 /* SoundPlayer.swift in Sources */,
 				DB60B8381BCC708200798EE6 /* NSDate+Utilities.m in Sources */,
@@ -978,12 +982,12 @@
 				DB60B81F1BCC66D500798EE6 /* ImageCollectionViewCell.swift in Sources */,
 				DB60B79E1BCC655D00798EE6 /* UIImage+JSQMessages.m in Sources */,
 				DB60B82C1BCC680900798EE6 /* Conversation.swift in Sources */,
-				DBEEBAC11BCC87E6001D48FE /* MessagesViewController.swift in Sources */,
 				DB60B7A81BCC655D00798EE6 /* JSQSystemSoundPlayer.m in Sources */,
 				DB60B7951BCC655D00798EE6 /* UIColorExtension.swift in Sources */,
 				DB60B7A31BCC655D00798EE6 /* JSQMessagesAvatarImageFactory.m in Sources */,
 				DB60B7A01BCC655D00798EE6 /* JSQMessagesKeyboardController.m in Sources */,
 				DB60B7A61BCC655D00798EE6 /* JSQMessagesTimestampFormatter.m in Sources */,
+				FCB000A01CBA795400DC9AC0 /* PhotoViewController.swift in Sources */,
 				DB60B79C1BCC655D00798EE6 /* UIColor+JSQMessages.m in Sources */,
 				DB60B81D1BCC66D500798EE6 /* AnimationController.swift in Sources */,
 				DB60B7DD1BCC655D00798EE6 /* SpringView.swift in Sources */,

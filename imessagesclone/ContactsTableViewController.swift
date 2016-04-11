@@ -89,7 +89,37 @@ struct StoryBoard {
         return cell
     }
     
-    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let currentUser = User.currentUser()!
+        let user1 = currentUser
+        let user2 = self.users[indexPath.row]
+        
+        var conversation = Conversation(teamId: teamId, user1: user1, user2: user2)
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let messageVC = storyBoard.instantiateViewControllerWithIdentifier("MessageViewController") as! MessagesViewController
+        
+        let predicate = NSPredicate(format: "user1 = %@ AND user2 = %@ OR user1 = @% AND user2 = @%", user1, user2, user2, user1)
+        
+        
+        let conversationQuery = PFQuery(className: Conversation.parseClassName(), predicate: predicate)
+        conversationQuery.cachePolicy = .NetworkElseCache
+        conversationQuery.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            if error == nil && objects!.count > 0{
+                conversation = objects?.last as! Conversation
+                messageVC.conversation = conversation
+                messageVC.incomingUser = user2
+                messageVC.hidesBottomBarWhenPushed = true
+                
+                self.navigationController?.pushViewController(messageVC, animated: true)
+            } else {
+                conversation.saveInBackgroundWithBlock({ (success, error) -> Void in
+                    messageVC.conversation = conversation
+                    messageVC.incomingUser = user2
+                    messageVC.hidesBottomBarWhenPushed = true
+                })
+                
+            }
+        }
         
     }
 }
